@@ -19,10 +19,10 @@ are under the working directory.
 
     docker run --rm -it -v /mnt/MTB_AMR_Pre:/data  sangerpathogens/ariba  /bin/bash
     python -m pip install joblib
-
-* Run Ariba for isolates listed in 'uniqueSRA.json' to output report files of genetic data and intermediate result, e.g., bam, vcf, contig files, into output directory aribaResult_withBam.
-* Provid the directory that the fastq files are located after -i.
-* Give number of threads you want to use after -n.
+    
+Run Ariba for isolates listed in 'uniqueSRA.json' to output report files of genetic data and intermediate result, e.g., bam, vcf, contig files, into output directory aribaResult_withBam.  
+Provid the directory that the fastq files are located after -i.  
+Give number of threads you want to use after -n.
 
     cd  /data
     python runAribaInLoop_withBam.py -f uniqueSRA.json -i fastqDump -o aribaResult_withBam -n 8 
