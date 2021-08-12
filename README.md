@@ -30,7 +30,7 @@ Give number of threads you want to use after -n.
 
     python run_summary_inLoop.py
 
-### Generate
+### Training-data-creation-for-traditional-ML-methods
 Select AMR genes, known variants and novel varaints on coding region that are detected on at least one sample as genetic feature, and plus 20 lineages as input feature set.
 Generate files of feature matrices, labels and SRA accessions in same sample order for each drug based on phenotype and lineage availability.
 
@@ -47,7 +47,7 @@ Output multiple metrices (e.g. f-measure, sensitivity, specifivity) to evaluate 
 ## Multi-input 1D CNN 
 
 ### Feature selection: 
-Use 80% of samples  to get importance score for each of the features from the [previous step](#Generate), 20% for validation to find best feature importance cutoff that maximizes F score.
+Use 80% of samples  to get importance score for each of the features from the [previous step](#Training-data-creation-for-traditional-ML-methods), 20% for validation to find best feature importance cutoff that maximizes F score.
 
     python select_important_feaures.py  > feature_selection_tunning_output.txt
 
