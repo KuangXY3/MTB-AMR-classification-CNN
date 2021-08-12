@@ -30,7 +30,7 @@ Give number of threads you want to use after -n.
 
     python run_summary_inLoop.py
 
-### Generate input feature matrix and labels for traditional ML methods:
+### Generate
 Select AMR genes, known variants and novel varaints on coding region that are detected on at least one sample as genetic feature, and plus 20 lineages as input feature set.
 Generate files of feature matrices, labels and SRA accessions in same sample order for each drug based on phenotype and lineage availability.
 
