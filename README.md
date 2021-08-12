@@ -21,8 +21,8 @@ are under the working directory.
     python -m pip install joblib
     
 Run Ariba for isolates listed in 'uniqueSRA.json' to output report files of genetic data and intermediate result, e.g., bam, vcf, contig files, into output directory aribaResult_withBam.  
-Provid the directory that the fastq files are located after -i.  
-Give number of threads you want to use after -n.
+Provid the directory of fastq files using -i.  
+Give number of threads you want to use using -n.
 
     cd  /data
     python runAribaInLoop_withBam.py -f uniqueSRA.json -i fastqDump -o aribaResult_withBam -n 8 
@@ -32,34 +32,32 @@ Give number of threads you want to use after -n.
     python run_summary_inLoop.py
 
 ### Training-data-creation-for-traditional-ML-methods
-* Select AMR genes, known variants and novel varaints on coding region that are detected on at least one sample as genetic feature, and plus 20 lineages as input feature set.
-* Generate files of feature matrices, labels and SRA accessions in same sample order for each drug based on phenotype and lineage availability.
+Select AMR genes, known variants and novel varaints on coding region that are detected on at least one sample as genetic feature, and plus 20 lineages as input feature set.  
+Generate files of feature matrices, labels and SRA accessions in same sample order for each drug based on phenotype and lineage availability.
 
     python get_feature_vector.py
 
 ## Traditional ML
 ### Random Forest and Logistic Regression 
-* Read features and labels from the output files of [last step](#Training-data-creation-for-traditional-ML-methods). 
-* Output multiple metrices (e.g. f-measure, sensitivity, specifivity) to evaluate RF and LR models (10-fold CV)
+Read features and labels from the output files of [last step](#Training-data-creation-for-traditional-ML-methods).  
+Output multiple metrices (e.g. f-measure, sensitivity, specifivity) to evaluate RF and LR models (10-fold CV)
 
     python RF_LR_validation_multiMetricCalculated.py
 
-
 ## Multi-input 1D CNN 
-
 ### Feature selection: 
 Use 80% of samples  to get importance score for each of the features from the [previous step](#Training-data-creation-for-traditional-ML-methods), 20% for validation to find best feature importance cutoff that maximizes F score.
 
     python select_important_feaures.py  > feature_selection_tunning_output.txt
 
 ### Build and validate 1D CNN models.
-* As multi-inputs of the first layer, variant features are converted to normalized base counts of fixed length (21) of DNA fragments centered at focal variants' loci.
-* Build our 1D CNN architecture.
-* Train and test 4 models for the 4 first-line TB drugs, respectively.
+As multi-inputs of the first layer, variant features are converted to normalized base counts of fixed length (21) of DNA fragments centered at focal variants' loci.  
+Build our 1D CNN architecture.  
+Train and test 4 models for the 4 first-line TB drugs, respectively.
 
     generateInput4Conv1D_withMultiInput_N_createCNN_trainNtest_on4drugs.py
 
-* Add coverage as an additional feature.
+Add coverage as an additional feature.
 
     generateInput4Conv1D_withMultiInput_N_createCNN_trainNtest_on4drugs_withCoverage.py
 
