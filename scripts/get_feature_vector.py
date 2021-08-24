@@ -125,8 +125,9 @@ def generate_featureVector_forOneIsoform(
     raw_features, summary_path, report_path, sra_acc, sra_lineage_dic
 ):
     """
-    Create the feature vector for one sample by parsing the report file (report_pat) to obtain the value for
-    AMR associated variants and gene present, which are listed in raw_feature, and adding corresponding lineage info
+    Create the feature vector for one sample by parsing the report file (report_pat) to 
+    obtain the value for AMR associated variants and gene present, which are listed in 
+    raw_feature, and adding corresponding lineage info.
     """
     ini_dic = {}
     f_vector = []
@@ -224,10 +225,11 @@ def generate_featureMatrics_labelList(
 
 
 raw_list = get_variable_names()
-#'Tables_20042018-revised_for_submission.xls' was obtained from the author of the source paper
-# 'https://www.nejm.org/doi/full/10.1056/nejmoa1800474'. We can't share this file on Github.
-#'phenotype.tsv' contains phenotype data for differenct drugs, which combine phenotype availabilties
-# from PATRIC and 'Tables_20042018-revised_for_submission.xls' .
+#'Tables_20042018-revised_for_submission.xls' containing phenotype and lineage data was shared
+# by the author of the source paper 'https://www.nejm.org/doi/full/10.1056/nejmoa1800474'.
+# We can't share this file on Github.
+#'phenotype.tsv' contains phenotype data extracted from 'Tables_20042018-revised_for_submission.xls
+# for differenct drugs.
 sra_lineage_map = generate_sra_lineage_map("Tables_20042018-revised_for_submission.xls")
 phenotype_nonGenFeature = generate_dic_nonGenFeature_label("phenotype.tsv")
 
