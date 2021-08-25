@@ -5,6 +5,7 @@
 This pipeline automates the process of machine learning (ML) model development for MTB first-line drug (RIF, INH, PZA and EMB) resistance classification. It covers each step from DNA-seq data download to ML model validation. In addition, the last step is to evaluate a statistical rule-based method on the same datasets used to validate ML models.
 Please refer to our paper [Accurate and rapid prediction of first-line tuberculosis drug resistance from genome sequence data using traditional machine learning algorithms and CNN ]() (link to online paper once it is published) for more details.
 The following is the guide for running this pipeline.
+![alt text](https://github.com/KuangXY3/MTB-AMR-classification-CNN/blob/master/ML_model_development_flowchart.png)
 
 ## Data preparation
 
