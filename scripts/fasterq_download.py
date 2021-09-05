@@ -35,8 +35,9 @@ def getArgs():
 
 
 def getfastq(sra, out_dir):
+    # run fasterq-dump from sra toolkit to download fastq files
     cmd = [
-        "/mnt/sra_current/sratoolkit.2.10.8-ubuntu64/bin/fasterq-dump",
+        "fasterq-dump",  # or give a full path like "/mnt/sra_current/sratoolkit.2.10.8-ubuntu64/bin/fasterq-dump"
         sra,
         "-O",
         out_dir,  # directory where you want to save the fastq files
