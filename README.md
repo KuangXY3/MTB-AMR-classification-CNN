@@ -11,7 +11,7 @@ The following is the guide for running this pipeline.
 
 Assume the working directory is /mnt/MTB_AMR_Pre and original input files needed for running the scripts are under the working directory.
 
-### Install [SRA-Toolkit](https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit) for downloading fastq files. Introduction of [SRA-Tools](https://github.com/ncbi/sra-tools)
+### Install [SRA-Toolkit](https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit) for downloading fastq files. ([SRA-Tools](https://github.com/ncbi/sra-tools) introduction)
 ### Download DNA-seq fastq files of isolates with SRA assessions listed in 'uniqueSRA.json' into directory 'fastqDump':
 
     python fasterq_download.py -f uniqueSRA.json -o fastqDump 
