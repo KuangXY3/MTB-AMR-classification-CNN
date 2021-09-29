@@ -32,7 +32,7 @@ Give the number of threads you want to use using -n.
 
     python run_summary_inLoop.py
 
-### Training-data-creation-for-traditional-ML-methods (put the [sample_input_files](https://github.com/KuangXY3/MTB-AMR-classification-CNN/tree/master/sample_input_files) phenotype.tsv and lineage.xls in the workin directory)
+### Training-data-creation-for-traditional-ML-methods (put the [sample_input_files](https://github.com/KuangXY3/MTB-AMR-classification-CNN/tree/master/sample_input_files) phenotype.tsv and lineage.xls in the working directory)
 Select AMR genes, known variants and novel variants on coding regions that are detected on at least one sample as genetic features, and add 20 lineages together as the input feature set.  
 Generate files of feature matrices, labels and SRA accessions in the same sample order for each drug based on phenotype and lineage availability.
 

@@ -225,12 +225,11 @@ def generate_featureMatrics_labelList(
 
 
 raw_list = get_variable_names()
-#'Tables_20042018-revised_for_submission.xls' containing phenotype and lineage data was shared
-# by the author of the source paper 'https://www.nejm.org/doi/full/10.1056/nejmoa1800474'.
-# We can't share this file on Github.
-#'phenotype.tsv' contains phenotype data extracted from 'Tables_20042018-revised_for_submission.xls
-# for differenct drugs.
-sra_lineage_map = generate_sra_lineage_map("Tables_20042018-revised_for_submission.xls")
+
+# Phenotype and lineage data are available in the supplementary file of the source paper
+# https://www.nejm.org/doi/full/10.1056/nejmoa1800474.
+# We organize phenotype data in 'phenotype.tsv' and lineage data in 'lineage.xls'
+sra_lineage_map = generate_sra_lineage_map("lineage.xls")
 phenotype_nonGenFeature = generate_dic_nonGenFeature_label("phenotype.tsv")
 
 # Generate input data for training ML models for the 4 first-line TB drugs resistance prediction
