@@ -9,10 +9,10 @@ The following is the guide for running this pipeline.
 
 ## Data preparation
 
-Assume the working directory is /mnt/MTB_AMR_Pre and original input files needed for running the scripts are under the working directory.
+Assume the working directory is /mnt/MTB_AMR_Pre and the scripts and original input files needed for running this pipeline are under the working directory.
 
 ### Install [SRA-Toolkit](https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit) for downloading fastq files. ([SRA-Tools](https://github.com/ncbi/sra-tools) introduction)
-### Download DNA-seq fastq files of isolates with SRA assessions listed in 'uniqueSRA.json' into directory 'fastqDump':
+### Download DNA-seq fastq files of isolates with SRA assessions listed in 'uniqueSRA.json' into directory 'fastqDump' (a sample uniqueSRA.json is in the folder [sample_input_files](https://github.com/KuangXY3/MTB-AMR-classification-CNN/tree/master/sample_input_files)):
 
     python fasterq_download.py -f uniqueSRA.json -o fastqDump 
 
@@ -32,7 +32,7 @@ Give the number of threads you want to use using -n.
 
     python run_summary_inLoop.py
 
-### Training-data-creation-for-traditional-ML-methods
+### Training-data-creation-for-traditional-ML-methods (put the [sample_input_files](https://github.com/KuangXY3/MTB-AMR-classification-CNN/tree/master/sample_input_files) phenotype.tsv and lineage.xls in the workin directory)
 Select AMR genes, known variants and novel variants on coding regions that are detected on at least one sample as genetic features, and add 20 lineages together as the input feature set.  
 Generate files of feature matrices, labels and SRA accessions in the same sample order for each drug based on phenotype and lineage availability.
 
