@@ -26,6 +26,7 @@ Provide the directory of fastq files using -i.
 Give the number of threads you want to use using -n.
 
     cd  /data
+    ariba getref card out.card
     python runAribaInLoop_withBam.py -f uniqueSRA.json -i fastqDump -o aribaResult_withBam -n 8 
 
 ### Get summary from Ariba result for isolates listed in 'uniqueSRA.json':
