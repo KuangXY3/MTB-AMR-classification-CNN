@@ -40,8 +40,8 @@ def loadAccessions():
 
 def runMykrobe(sra):
     fastq_dir = "fastqDump/"
-    reads1 = fastq_dir + sra + "_1.fastq.gz"
-    reads2 = fastq_dir + sra + "_2.fastq.gz"
+    reads1 = fastq_dir + sra + "_1.fastq"
+    reads2 = fastq_dir + sra + "_2.fastq"
     if os.path.isfile(reads1) and os.path.isfile(reads2):
         out_file = "mykrobeOut/result_" + sra + ".csv"
         if not (os.path.isfile(out_file)):

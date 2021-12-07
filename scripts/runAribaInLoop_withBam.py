@@ -51,8 +51,8 @@ def getArgs():
 def runAriba(sra, in_dir, out_dir):
     # print (sra)
     fastq_dir = in_dir + "/"
-    reads1 = fastq_dir + sra + "_1.fastq.gz"
-    reads2 = fastq_dir + sra + "_2.fastq.gz"
+    reads1 = fastq_dir + sra + "_1.fastq"
+    reads2 = fastq_dir + sra + "_2.fastq"
     if os.path.isfile(reads1) and os.path.isfile(reads2):
         out_dir = out_dir + "/outRun_" + sra
         if not (os.path.isfile(out_dir + "/report.tsv")):

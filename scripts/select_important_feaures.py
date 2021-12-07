@@ -10,9 +10,12 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 
 # Here, the order of features in feat_labels should be same as the order of the features in feature matrix 'featureM_X_drug.txt'
-feat_labels = np.loadtxt("raw_fList_final.txt", dtype=np.str)
+feat_labels = np.loadtxt("raw_fList.txt", dtype=np.str)
 # print ("Number of full set of features: {}".format(len(feat_labels))  )
+# first line drugs
 drug_l = ["rifampicin", "isoniazid", "pyrazinamide", "ethambutol"]
+# second line drugs
+# drug_l = ['amikacin','capreomycin','kanamycin','ofloxacin']
 for drug in drug_l:
     featureX = "featureM_X_" + drug + ".txt"
     label = "label_Y_" + drug + ".txt"

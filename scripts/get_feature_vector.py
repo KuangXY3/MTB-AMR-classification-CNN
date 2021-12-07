@@ -18,19 +18,18 @@ lineage = [
     "X-type",
     "Haarlem",
     "lineage4",
-    "West African 2",
+    "WestAfrican2",
     "S-type",
     "Ural",
-    "M. orygis",
-    "M. bovis",
+    "M.orygis",
+    "M.bovis",
     "Cameroon",
     "Tur",
     "Uganda",
-    "West African 1b",
+    "WestAfrican1b",
     "BCG",
     "Ghana",
-    "M. caprae",
-    "M. microti",
+    "M.caprae",
 ]
 firstLine_TB_4antibio = ["rifampicin", "ethambutol", "isoniazid", "pyrazinamide"]
 
@@ -114,10 +113,17 @@ def generate_sra_lineage_map(sourceF):
     """
     df = pd.read_excel(sourceF, sheet_name="Sheet1")
     df.fillna("", inplace=True)
+    # print (df['lineage'].unique())
     sra_lineage = {}
     for i, j in df.iterrows():
-        if j["SRA"] != "" and j["lineage"] != "":
-            sra_lineage[j["SRA"]] = j["lineage"]
+        l = j["lineage"].replace(" ", "")
+        # if l!='' and l!='M.microti':
+        if l != "":
+            if l == "M.microti":
+                print(j["SRA"])
+            sral = j["SRA"].split()
+            for s in sral:
+                sra_lineage[s] = l
     return sra_lineage
 
 
@@ -145,7 +151,7 @@ def generate_featureVector_forOneIsoform(
                 ini_dic[df["ref_name"][i]] = 1
 
             if df["known_var"][i] == "0" and df["gene"][i] == "1":
-                ini_dic[df["ref_name"][i] + "." + df["ref_ctg_change"][i]] = (1,)
+                ini_dic[df["ref_name"][i] + "." + df["ref_ctg_change"][i]] = 1
 
             if df["known_var"][i] == "1" and df["has_known_var"][i] == "1":
                 ini_dic[df["ref_name"][i] + "." + df["known_var_change"][i]] = 1

@@ -37,17 +37,17 @@ def getArgs():
 def getfastq(sra, out_dir):
     # run fasterq-dump from sra toolkit to download fastq files
     cmd = [
-        "fasterq-dump",  # or give a full path like "/mnt/sra_current/sratoolkit.2.10.8-ubuntu64/bin/fasterq-dump"
+        "/home/ubuntu/xk/sratoolkit.2.11.2-ubuntu64/bin/fasterq-dump",  # if you set sra toolkit's path to PATH, call fasterq-dump directly
         sra,
+        "--threads",
+        "16",
         "-O",
         out_dir,  # directory where you want to save the fastq files
-        "-t",
-        "/tmp/scratch",
     ]
 
     # when it is not the first run, it tries to download missing fastq files
-    f_file1 = "/mnt/ariba_run/fastqDump/" + sra + "_1.fastq.gz"
-    f_file2 = "/mnt/ariba_run/fastqDump/" + sra + "_2.fastq.gz"
+    f_file1 = out_dir + "/" + sra + "_1.fastq"
+    f_file2 = out_dir + "/" + sra + "_2.fastq"
     if not (os.path.isfile(f_file1) and os.path.isfile(f_file2)):
         print("\n--- API Call for {} ---\n".format(sra))
         with open("fastqDumpLog.txt", "a+") as f:
