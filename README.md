@@ -78,4 +78,4 @@ Add coverage as an additional feature.
 
 ## Citation
 ### If you use code or idea here, please cite:
-Kuang, X., Wang, F., Hernandez, K. M., Zhang, Z., & Grossman, R. L. (2022). Accurate and rapid prediction of tuberculosis drug resistance from genome sequence data using traditional machine learning algorithms and CNN. Scientific Reports, 12(1), 1-10. [Paper_link](https://www.nature.com/articles/s41598-022-06449-4)
+Kuang, X., Wang, F., Hernandez, K. M., Zhang, Z., & Grossman, R. L. (2022). [Accurate and rapid prediction of tuberculosis drug resistance from genome sequence data using traditional machine learning algorithms and CNN.](https://www.nature.com/articles/s41598-022-06449-4) Scientific Reports, 12(1), 1-10.
