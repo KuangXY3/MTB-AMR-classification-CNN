@@ -14,19 +14,19 @@ feat_labels = np.loadtxt("raw_fList.txt", dtype=np.str)
 
 
 def tn(y_true, y_pred):
-    return confusion_matrix(y_true, y_pred)[0, 0]
+    return confusion_matrix(y_true, y_pred, labels=[0, 1])[0, 0]
 
 
 def fp(y_true, y_pred):
-    return confusion_matrix(y_true, y_pred)[0, 1]
+    return confusion_matrix(y_true, y_pred, labels=[0, 1])[0, 1]
 
 
 def fn(y_true, y_pred):
-    return confusion_matrix(y_true, y_pred)[1, 0]
+    return confusion_matrix(y_true, y_pred, labels=[0, 1])[1, 0]
 
 
 def tp(y_true, y_pred):
-    return confusion_matrix(y_true, y_pred)[1, 1]
+    return confusion_matrix(y_true, y_pred, labels=[0, 1])[1, 1]
 
 
 scoring = {
